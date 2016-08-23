@@ -32,6 +32,7 @@ function varargout = statusbarTimer(varargin)
 %   <a href="matlab:system('open https://www.mathworks.com/matlabcentral/fileexchange/52833-statusbartimer');">https://www.mathworks.com/matlabcentral/fileexchange/52833-statusbartimer</a>
 % 
 % Requires:
+%   <a href="matlab:system('open https://www.mathworks.com/matlabcentral/fileexchange/14773-statusbar');">statusbar</a>
 %   <a href="matlab:system('open https://www.mathworks.com/matlabcentral/fileexchange/52831-parsetime');">parseTime</a>
 %   <a href="matlab:system('open https://www.mathworks.com/matlabcentral/fileexchange/52832-num2sepstr');">num2sepstr</a>
 % 
