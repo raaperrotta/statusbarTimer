@@ -58,7 +58,8 @@ if n==2 && isa(varargin{1},'timer') % Update UserData to be used by TimerFcn
 end
 
 if n >= 1
-    if isscalar(varargin{1}) && (varargin{1}==0 || ishghandle(varargin{1}))
+    if isscalar(varargin{1}) && ~islogical(varargin{1}) && ...
+            (varargin{1}==0 || ishghandle(varargin{1}))
         h = varargin{1};
         varargin = varargin(2:end);
         n = n - 1;
@@ -66,13 +67,13 @@ if n >= 1
 end
 
 if n == 2
-    prefix = varargin{2};
-    noprint = logical(varargin{3});
+    prefix = varargin{1};
+    noprint = logical(varargin{2});
 elseif n == 1
     if ischar(varargin{1})
         prefix = varargin{1};
     else
-        noprint = logical(varargin);
+        noprint = logical(varargin{1});
     end
 end
 
