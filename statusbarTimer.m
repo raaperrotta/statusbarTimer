@@ -9,18 +9,18 @@ function varargout = statusbarTimer(varargin)
 %   which will delete itself and reset the status bar when stop(t) is
 %   called. Unless noprint is set to true, the final time will be displayed
 %   in the command window in the style of toc.
-% 
+%
 %   STATUSBARTIMER(t,prefix) updates the message string of an existing
 %   timer.
-% 
+%
 % Examples:
-% 
+%
 %   t = statusbarTimer();
 %   pause(5)
 %   stop(t)
-% 
+%
 %   statusbarTimer(figure(),'Hello, World!')
-% 
+%
 %   t = statusbarTimer('Entering loop');
 %   for ii = 1:10
 %       pause(1)
@@ -30,12 +30,12 @@ function varargout = statusbarTimer(varargin)
 %
 % Hosted on MATLAB File Exchange:
 %   <a href="matlab:system('open https://www.mathworks.com/matlabcentral/fileexchange/52833-statusbartimer');">https://www.mathworks.com/matlabcentral/fileexchange/52833-statusbartimer</a>
-% 
+%
 % Requires:
 %   <a href="matlab:system('open https://www.mathworks.com/matlabcentral/fileexchange/14773-statusbar');">statusbar</a>
 %   <a href="matlab:system('open https://www.mathworks.com/matlabcentral/fileexchange/52831-parsetime');">parseTime</a>
 %   <a href="matlab:system('open https://www.mathworks.com/matlabcentral/fileexchange/52832-num2sepstr');">num2sepstr</a>
-% 
+%
 % Created by:
 %   Robert Perrotta
 
@@ -102,7 +102,7 @@ if h~=0 && ~ishghandle(h) % Figure was closed
     stop(t)
     return
 end
-    
+
 data = get(t,'UserData');
 str = parseTime(etime(clock,data{2}));
 statusbar(h,sprintf('%s (%s elapsed.)',data{1},str))
