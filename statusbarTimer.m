@@ -77,6 +77,15 @@ elseif n == 1
     end
 end
 
+if ishghandle(h)
+    % Warn about undocumented use of JFrame and offer to silence warning
+    status = warning('query','MATLAB:HandleGraphics:ObsoletedProperty:JavaFrame');
+    alreadysilenced = strcmp(status.state,'off');
+    if ~alreadysilenced
+        warning('statusbarTimer:JFrame','statusbarTimer uses the undocumented JFrame to set figure status. This will cause MATLAB to thow a warning, which you can silence with <a href="matlab:warning(''off'',''MATLAB:HandleGraphics:ObsoletedProperty:JavaFrame'');">warning(''off'',''MATLAB:HandleGraphics:ObsoletedProperty:JavaFrame'')</a>')
+    end
+end
+
 existingTimer = timerfind('Name','statusbarTimer');
 for ii = 1:length(existingTimer)
     h2 = get(existingTimer(ii),'TimerFcn');
